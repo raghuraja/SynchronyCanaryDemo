@@ -10,7 +10,7 @@ WORKDIR /app
 COPY ["SynchronyCanaryDemo/SynchronyCanaryDemo.csproj", "SynchronyCanaryDemo/"]
 RUN dotnet restore "SynchronyCanaryDemo/SynchronyCanaryDemo.csproj"
 COPY . .
-WORKDIR "/app/SynchronyCanaryDemo"
+WORKDIR /app
 RUN dotnet build "SynchronyCanaryDemo.csproj" -c Release -o /app/build
 
 FROM build AS publish
