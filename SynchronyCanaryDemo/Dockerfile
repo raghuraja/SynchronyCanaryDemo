@@ -6,7 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
-WORKDIR /SynchronyCanaryDemo
+WORKDIR ./SynchronyCanaryDemo
 COPY ["SynchronyCanaryDemo/SynchronyCanaryDemo.csproj", "SynchronyCanaryDemo/"]
 RUN dotnet restore "SynchronyCanaryDemo/SynchronyCanaryDemo.csproj"
 COPY . .
